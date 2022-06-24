@@ -7,8 +7,8 @@ import routes from './src/routes/user-routes';
 const app = express();
 const PORT = 8000;
 
-// mongoose.Promise = global.Promise;
-// mongoose.connect('mongodb://localhost:27017/sap_db', { useNewUrlParser: true });
+mongoose.Promise = global.Promise;
+mongoose.connect('mongodb://localhost:27017/sap_db', { useNewUrlParser: true });
 
 
 // configuration

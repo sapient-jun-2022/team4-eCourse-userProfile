@@ -1,0 +1,46 @@
+
+
+###
+GET http://localhost:8000
+
+
+###
+
+POST http://localhost:8000/addUser HTTP/1.1
+Content-Type: application/json
+
+{
+    "firstName" : "test name",
+    "lastName" : "test last",
+    "email" : "test@gmail.com",
+    "phone": "33434",
+    "password" : "testpassword",
+    "organization" : "IISE",
+    "wishList":[123,999,333] ,
+    "myLearningList": [896,456,567], 
+    "language" : "English",
+    "lernerStage" : "Intermediate"
+}
+
+###
+GET http://localhost:8000/getAllUser
+
+###
+GET  http://localhost:8000/user/62b58671bc672b673ae2b869
+
+###
+PUT  http://localhost:8000/user/62b58671bc672b673ae2b869
+Content-Type: application/json
+
+{
+    "firstName" : "test updated",
+    "lastName" : "test updated",
+    "email" : "testUpdated@gmail.com",
+    "password": "testupdatedPasswordupdated",
+    "phone": "34343433",
+    "organization" : "Publicis Sapient",
+    "wishList":[123,999,333] ,
+    "myLearningList": [896,456,567], 
+    "language" : "English",
+    "lernerStage" : "Intermediate"
+}

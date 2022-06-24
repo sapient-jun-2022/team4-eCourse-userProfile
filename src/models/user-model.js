@@ -2,20 +2,28 @@ import mongoose from 'mongoose';
 
 const Schema = mongoose.Schema;
 
-export const schema = new Schema({
+export const UserDetailsSchema = new Schema({
     firstName: {
-        type: String
+        type: String,
+        required : "First Name is mandatory......."
     },
     lastName: {
-        type: String
+        type: String,
+        required : "Last Name is mandatory......."
     },
-    Email: {
-        type: String
+    email: {
+        type: String,
+        required : "Email is mandatory......."
     },
-    mobileNo: {
-        type: Number
+    password:{
+        type:String,
+        required : "Password is mandatory......."
     },
-    Organization: {
+    phone: {
+        type: Number,
+        required : "Phone Number is mandatory......."
+    },
+    organization: {
         type: String
     },
     wishList: {
@@ -24,11 +32,12 @@ export const schema = new Schema({
     myLearningList: {
         type: [Number]
     },
-    Language: {
+    language: {
         type: String
     },
     lernerStage: {
-        type: String
+        type: String,
+        required : "Learning is mandatory......."
     },
     creationDate : {
         type : Date,
