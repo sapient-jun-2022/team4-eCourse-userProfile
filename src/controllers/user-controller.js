@@ -6,7 +6,7 @@ const UserDetails = mongoose.model('UserDetails',UserDetailsSchema);
 
 
 
-// Add new User 
+// Add new User  
 export const addUser = (req,res)=>{
     let newUser = new UserDetails(req.body);
 
@@ -40,7 +40,7 @@ export const getUserById = (req,res)=>{
     })
 }
 
-// Update By ID
+// Update User By ID
 export const updateUserDetails = (req,res)=>{
     UserDetails.findByIdAndUpdate({_id:req.params.userId},req.body,{new : true},(err,updatedUser)=>{
         if(err){
@@ -50,6 +50,17 @@ export const updateUserDetails = (req,res)=>{
     });
 
 }
+
+// Delete user by ID
+export const deleteById = (req,res)=>{
+    UserDetails.findByIdAndRemove(req.params.userId,(err,user)=>{
+        if(err){
+            res.send(err);
+        }
+        res.json({ message: "User deleted successfully.", user });
+    })
+}
+
 
 
 export const home = (req,res)=>{

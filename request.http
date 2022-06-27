@@ -4,43 +4,60 @@
 GET http://localhost:8000
 
 
-###
+### Insert one record
 
 POST http://localhost:8000/addUser HTTP/1.1
 Content-Type: application/json
 
 {
-    "firstName" : "test name",
-    "lastName" : "test last",
-    "email" : "test@gmail.com",
-    "phone": "33434",
-    "password" : "testpassword",
-    "organization" : "IISE",
+    "firstName" : "Pratima",
+    "lastName" : "Singh",
+    "email" : "pratima@gmail.com",
+    "phone": "3675679",
+    "organization" : "HTB",
+    "wishList":[435,654,984] ,
+    "myLearningList": [123,123,788], 
+    "language" : "English",
+    "lernerStage" : "Professional"
+}
+
+###  Get all user
+GET http://localhost:8000/getAllUser
+
+### get BY ID
+GET  http://localhost:8000/user/62b59bbfaaadf375ac357c87
+
+### Update By ID
+PUT  http://localhost:8000/user/update/62b9866e30ec3fdd12023308
+Content-Type: application/json
+
+{
+    "firstName" : "Pratima",
+    "lastName" : "Pratima",
+    "email" : "pratimal@gmail.com",
+    "phone": "37584758",
+    "organization" : "Fresher",
     "wishList":[123,999,333] ,
     "myLearningList": [896,456,567], 
     "language" : "English",
     "lernerStage" : "Intermediate"
 }
 
-###
-GET http://localhost:8000/getAllUser
+### Delete User by ID
+PUT http://localhost:8000/user/delete/62b59b3daaadf375ac357c82
 
-###
-GET  http://localhost:8000/user/62b58671bc672b673ae2b869
-
-###
-PUT  http://localhost:8000/user/62b58671bc672b673ae2b869
+### Add In wishList
+POST http://localhost:8000/user/wishList/62b59bbfaaadf375ac357c87
 Content-Type: application/json
 
 {
-    "firstName" : "test updated",
-    "lastName" : "test updated",
-    "email" : "testUpdated@gmail.com",
-    "password": "testupdatedPasswordupdated",
-    "phone": "34343433",
-    "organization" : "Publicis Sapient",
-    "wishList":[123,999,333] ,
-    "myLearningList": [896,456,567], 
-    "language" : "English",
-    "lernerStage" : "Intermediate"
+    "wishList":[555,666,190]
+}
+
+### Remove from WishList
+POST http://localhost:8000/user/wishList/delete/62b59bbfaaadf375ac357c87
+Content-Type: application/json
+
+{
+    "wishList":[101,124,345]
 }

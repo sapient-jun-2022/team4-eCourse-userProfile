@@ -16,8 +16,7 @@ export const UserDetailsSchema = new Schema({
         required : "Email is mandatory......."
     },
     password:{
-        type:String,
-        required : "Password is mandatory......."
+        type:String
     },
     phone: {
         type: Number,
@@ -27,7 +26,7 @@ export const UserDetailsSchema = new Schema({
         type: String
     },
     wishList: {
-        type: [Number]
+        type: [Number] // courseID
     },
     myLearningList: {
         type: [Number]
